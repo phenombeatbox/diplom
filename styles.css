@@ -294,7 +294,7 @@ main {
 }
 
 .single-academic-img {
-    max-height: 600px;
+    max-height: 60vh;
     max-width: 500px;
     padding: 10px;
     border-radius: 275px;
@@ -316,6 +316,8 @@ main {
     padding: 20px;
     border-radius: 5px;
     text-align: justify;
+    max-height: 70vh;
+    overflow: auto;
 }
 
 .single-academic-text>span {
