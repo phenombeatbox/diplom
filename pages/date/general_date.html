@@ -6,99 +6,62 @@
 <!-- Строка, которая будет отображаться в заголовке HTML страницы -->
 <title>Даты и события</title>
 
+<header>
+    <div class=caption>
+        <span> Даты и события </span>
+    </div>
+    <!-- <div class="buttonback">
+        <span> назад </span>
+    </div> -->
+    <div class="buttonhome">
+        <a href="../../index.html"> домой </a>
+    </div>
+
+</header>
 
 <body>
-    <header>
-        <div class=caption>
-            <span> Даты и события </span>
-        </div>
-        <!-- <div class="buttonback">
-            <span> назад </span>
-        </div> -->
-        <div class="buttonhome">
-            <a href="../../index.html"> домой </a>
-        </div>
-
-    </header>
-
-
     <main>
-        <div class="alldate">
-
-            <div class="box_date mexanica">
-                <div class="mexanica-img">
-                    <a class="mexanica-img" href="../date/single_date/mexanica.html">
-                        <img src="">
-                        <div class="box-header">
-                            <span class="box-header-title"> Механика  </span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="box_date mexanica">
-                <div class="mexanica-img">
-                    <a class="mexanica-img" href="../date/single_date/molecular.html">
-                        <img src="">
-                        <div class="box-header">
-                            <span class="box-header-title"> Молекулярная физика.Тепловые явления  </span>
-                    </a>
-                </div>
-            </div>
-        
-
-            <div class="box_date mexanica">
-                <div class="mexanica-img">
-                    <a class="mexanica-img" href="../date/single_date/electrodinam.html">
-                        <img src="">
-                        <div class="box-header">
-                            <span class="box-header-title"> Основы электродинамики  </span>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="box_date mexanica">
-                <div class="mexanica-img">
-                    <a class="mexanica-img" href="../date/single_date/kolebaniya.html">
-                        <img src="">
-                            <div class="box-header">
-                        <span class="box-header-title"> Колебания и волны  </span>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="box_date mexanica">
-                <div class="mexanica-img">
-                    <a class="mexanica-img" href="../date/single_date/optica.html">
-                        <img src="">
-                        <div class="box-header">
-                            <span class="box-header-title"> Оптика  </span>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="box_date mexanica">
-                <div class="mexanica-img">
-                    <a class="mexanica-img" href="../date/single_date/kvant.html">
-                        <img src="">
-                        <div class="box-header">
-                            <span class="box-header-title">  Квантовая физика </span>
-                    </a>
-                </div>
-            </div>
-
-
-            <div class="box_date mexanica">
-                <div class="mexanica-img">
-                    <a class="mexanica-img" href="../date/single_date/astronomiya.html">
-                        <img src="">
-                        <div class="box-header">
-                            <span class="box-header-title"> Астрономия  </span>
-                    </a>
-                </div>
-            </div>
+        <div id="alldate" class="alldate">
         </div>
-
     </main>
+</body>
+
+<script>
+    const root = document.getElementById('alldate');
+
+    [{
+        text: 'Механика',
+        link: '../date/single_date/mexanica.html'
+    }, {
+        text: 'Молекулярная',
+        link: '../date/single_date/molecular.html'
+    }, {
+        text: 'Основы',
+        link: '../date/single_date/electrodinam.html'
+    }, {
+        text: 'Колебания',
+        link: '../date/single_date/kolebaniya.html'
+    }, {
+        text: 'Оптика',
+        link: '../date/single_date/optica.html'
+    }, {
+        text: 'Квантовая',
+        link: '../date/single_date/kvant.html'
+    }, {
+        text: 'Астрономия',
+        link: '../date/single_date/astronomiya.html'
+    }].forEach(item => {
+        const title = document.createElement('p');
+        title.innerHTML = item.text;
+        const a = document.createElement('a');
+        a.href = item.link;
+        const div = document.createElement('div');
+        div.setAttribute('class', 'box_date');
+
+        a.appendChild(title);
+        div.appendChild(a);
+        root.appendChild(div);
+    })
+
+
+</script>

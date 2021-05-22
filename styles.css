@@ -212,6 +212,7 @@ main {
     cursor: pointer;
     transition: 0.4s;
     text-decoration: none;
+    color: white;
 }
 
 .card .card_image {
@@ -349,10 +350,24 @@ main {
 }
 
 
-/* .box_date {
+.box_date {
     display: flex;
-    flex-direction: column
-} */
+    margin-top: 15px;
+    width: 100%;
+}
+
+.box_date > a {
+    font-size: 24px;
+    height: 100px;
+    background: #0b2a49;
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 article {
     width: 95%;
@@ -374,6 +389,7 @@ article {
 }
 
 .box-header-date {
+    flex: 1;
     font-size: 40px;
     border-radius: 15px;
 }
