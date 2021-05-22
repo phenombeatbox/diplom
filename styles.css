@@ -23,6 +23,7 @@ html {
     display: flex;
     flex: 1;
     justify-content: flex-end;
+    text-decoration: none;
 }
 
 .buttonhome {
@@ -30,6 +31,7 @@ html {
     flex: 1;
     justify-content: flex-end;
     padding-right: 20px;
+    text-decoration: none;
 }
 
 header {
@@ -254,7 +256,7 @@ main {
     background: #00000091;
 }
 
-.titi {
+.titles {
     color: #fff;
 }
 
@@ -327,4 +329,133 @@ main {
 .single-academic-text-title {
     font-weight: bold;
     font-size: 20px;
+}
+
+.device_card {
+    width: 300px;
+    height: 300px;
+}
+
+.single-device-img {
+    border-radius: 10px;
+}
+
+.alldate {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: center;
+}
+
+
+/* .box_date {
+    display: flex;
+    flex-direction: column
+} */
+
+article {
+    width: 95%;
+    max-width: 40em;
+    margin: 2em auto;
+}
+
+.alphabet_card {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(126, 126, 126);
+    font-size: 125px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.letter {
+    text-decoration: none;
+}
+
+.box-header-date {
+    font-size: 40px;
+    border-radius: 15px;
+}
+
+.books_card {
+    width: 400px;
+    height: 100px;
+    background-color: coral;
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    transition: .5s ease-in-out;
+}
+
+.list__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    background: #4e3c3c;
+    font-size: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.list__item::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: .5s ease-in-out;
+    z-index: 1;
+}
+
+.list__item:hover::before {
+    transform: scale(0.8);
+}
+
+.list__item:hover .list__item-link {
+    color: #000;
+    transform: scale(1.1);
+}
+
+.list__item-link {
+    position: relative;
+    z-index: 5;
+    color: #fff;
+    transition: .5s ease-in-out;
+}
+
+.date-text {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.7;
+    background: #efefef;
+    /* padding: 20px; */
+    /* border-radius: 5px; */
+    /* text-align: justify; */
+    /*  max-height: 70vh; */
+    overflow: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    font-size: 18px;
 }
