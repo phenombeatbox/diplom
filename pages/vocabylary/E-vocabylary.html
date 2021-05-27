@@ -6,27 +6,48 @@
 <!-- Строка, которая будет отображаться в заголовке HTML страницы -->
 <title>Словарь</title>
 
+<style>
+    body {
+        overflow: auto;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        background: #efefef;
+        padding: 50px;
+        margin: 50px;
+        margin-top: calc(70px + 30px);
+        border-radius: 5px;
+        font-size: 21px;
+        font-weight: bold;
+    }
+    .bold{
+        font-weight: bold;  
+    }
+    .list_vocabylary{
+    margin-top: 10px;
+    }
+    
+</style>
 
 <body>
     <header>
         <div class=caption>
-            <p></p> Буква Е </span>
-        </div>
-        <div class="buttonback">
-            <a href="../../vocabylary.html">Назад </a>
-        </div>
+            <span> Буква Е </span>
+        </div> <div class="buttonback">
+            <a href="../../vocabylary.html">
+                <img height="50" width="50" src="../../assets/icons/back.svg" alt="">
+            </a>
         <div class="buttonhome">
-            <a href="../../../index.html">
-                <img height="50" width="50" src="../../../assets/icons/home.svg" alt="">
+            <a href="../../index.html">
+                <img height="50" width="50" src="../../assets/icons/home.svg" alt="">
             </a>
         </div>
-
     </header>
 
     <main>
-        <article>
-            Естественный свет – это световой поток, в котором колебания происходят по всем направлениям, перпендикулярным направлению распространения волн. 
-            Ёмкостное сопротивление – это сопротивление изменению напряжения на элементе. Обозначается буквой XC. В СИ единица измерения работы силы: [XC] = Ом.
-
-        </article>
+            <li class="list_vocabylary"><span class="bold">Естественный свет</span> – это световой поток, в котором колебания происходят по всем направлениям, перпендикулярным направлению распространения волн.</li>
+            <li class="list_vocabylary"><span class="bold">Ёмкостное сопротивление</span> – это сопротивление изменению напряжения на элементе. Обозначается буквой XC. В СИ единица измерения работы силы: [XC] = Ом.</li>
     </main>
+</body>

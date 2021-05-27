@@ -6,26 +6,49 @@
 <!-- Строка, которая будет отображаться в заголовке HTML страницы -->
 <title>Словарь</title>
 
+<style>
+    body {
+        overflow: auto;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        background: #efefef;
+        padding: 50px;
+        margin: 50px;
+        margin-top: calc(70px + 30px);
+        border-radius: 5px;
+        font-size: 21px;
+        font-weight: bold;
+    }
+    .bold{
+        font-weight: bold;  
+    }
+    .list_vocabylary{
+    margin-top: 10px;
+    }
+    
+</style>
 
 <body>
     <header>
         <div class=caption>
-            <p></p> Буква Я </span>
-        </div>
-        <div class="buttonback">
-            <a href="../../vocabylary.html">Назад </a>
-        </div>
+            <span> Буква Я </span>
+        </div> <div class="buttonback">
+            <a href="../../vocabylary.html">
+                <img height="50" width="50" src="../../assets/icons/back.svg" alt="">
+            </a>
         <div class="buttonhome">
-            <a href="../../index.html"> домой </a>
+            <a href="../../index.html">
+                <img height="50" width="50" src="../../assets/icons/home.svg" alt="">
+            </a>
         </div>
-
     </header>
 
     <main>
-        <article>
-            Ядерная реакция – это изменение атомных ядер при взаимодействии их с элементарными частицами или друг с другом.
-            Ядерная цепная реакция – это реакция, в которой частицы, вызывающие ее (нейтроны), образуются как продукты этой реакции.
-            Ядерные силы – это силы, которые действуют только внутри атомных ядер, а это расстояние порядка 10-13 см.  На расстоянии 10-11 см они не проявляются совсем. Однако стоит отметить, что именно ядерные силы были признаны самыми мощными силами в природе.
-
-        </article>
+        <li class="list_vocabylary"><span class="bold">Ядерная реакция</span> – это изменение атомных ядер при взаимодействии их с элементарными частицами или друг с другом.</li>
+        <li class="list_vocabylary"><span class="bold">Ядерная цепная реакция</span> – это реакция, в которой частицы, вызывающие ее (нейтроны), образуются как продукты этой реакции.</li>
+        <li class="list_vocabylary"><span class="bold">Ядерные силы</span> – это силы, которые действуют только внутри атомных ядер, а это расстояние порядка 10-13 см.  На расстоянии 10-11 см они не проявляются совсем. Однако стоит отметить, что именно ядерные силы были признаны самыми мощными силами в природе.</li>
     </main>
+</body>

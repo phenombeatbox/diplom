@@ -6,6 +6,7 @@
     /* убирает поля по умолчанию */
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    
 }
 
 html {
@@ -353,18 +354,17 @@ main {
 
 .box_date {
     display: flex;
-    margin-top: 15px;
+    margin-top: 3px;
     width: 100%;
 }
 
 .box_date > a {
     font-size: 24px;
-    height: 100px;
+    height: 70px;
     background: #0b2a49;
     color: #fff;
     text-decoration: none;
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -372,7 +372,7 @@ main {
 
 article {
     width: 95%;
-    max-width: 40em;
+    max-width: 50em;
     margin: 2em auto;
 }
 

@@ -7,24 +7,51 @@
 <title>Словарь</title>
 
 
+<style>
+    body {
+        overflow: auto;
+    }
+    
+    main {
+        display: flex;
+        flex-direction: column;
+        background: #efefef;
+        padding: 50px;
+        margin: 50px;
+        margin-top: calc(70px + 30px);
+        border-radius: 5px;
+        font-size: 21px;
+        font-weight: bold;
+    }
+    .bold{
+        font-weight: bold;  
+    }
+    .list_vocabylary{
+    margin-top: 10px;
+    }
+    
+</style>
+
 <body>
     <header>
         <div class=caption>
-            <p></p> Буква Ж </span>
-        </div>
-        <div class="buttonback">
-            <a href="../../vocabylary.html">Назад </a>
-        </div>
+            <span> Буква Ж </span>
+        </div> <div class="buttonback">
+            <a href="../../vocabylary.html">
+                <img height="50" width="50" src="../../assets/icons/back.svg" alt="">
+            </a>
         <div class="buttonhome">
-            <a href="../../index.html"> домой </a>
+            <a href="../../index.html">
+                <img height="50" width="50" src="../../assets/icons/home.svg" alt="">
+            </a>
         </div>
-
     </header>
 
     <main>
-        <article>
-            Живая клетка – это сложный механизм, не способный продолжать нормальную деятельность даже при малых повреждениях отдельных его участков.
-            Жидкокристаллическое состояние – это состояние вещества, обладающего одновременно анизотропией и текучестью. Жидкими кристаллами являются в основном органические вещества, молекулы которых имеют длинную нитевидную форму или форму плоских пластин.
-            Жидкость – это совокупность подвижных молекул, среднее расстояние между которыми в процессе их движения остаётся неизменным. 
-        </article>
+        
+        <li class="list_vocabylary"><span class="bold">Живая клетка</span> – это сложный механизм, не способный продолжать нормальную деятельность даже при малых повреждениях отдельных его участков.</li>
+        <li class="list_vocabylary"><span class="bold">Жидкокристаллическое состояние</span> – это состояние вещества, обладающего одновременно анизотропией и текучестью. Жидкими кристаллами являются в основном органические вещества, молекулы которых имеют длинную нитевидную форму или форму плоских пластин.</li>
+        <li class="list_vocabylary"><span class="bold">Жидкость</span> – это совокупность подвижных молекул, среднее расстояние между которыми в процессе их движения остаётся неизменным. </li>
+        
     </main>
+</body>
