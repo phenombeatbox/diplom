@@ -6,6 +6,43 @@
 <!-- Строка, которая будет отображаться в заголовке HTML страницы -->
 <title>Контакты</title>
 
+<style>
+    .card_contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 350px;
+        height: 200px;
+        border-radius: 5px;
+        margin-left: 15px;
+    }
+
+    .card_contact > a {
+        color: white;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .vk {
+        background-color: #5181b8;
+    }
+
+    .phone {
+        background-color: #51b873;
+    }
+
+    .mail {
+        background-color: #b85151;
+    }
+</style>
+
 <body>
     <header>
         <div class=caption>
@@ -23,11 +60,17 @@
     </header>
 
     <main>
-        <ul class="list">
-            <li class="list__item"><a class="list__item-link" href=""><i class="fab fa-vk"></i></a></li>
-            <li class="list__item"><a class="list__item-link" href=""><i class="fab fa-facebook-f"></i></a></li>
-            <li class="list__item"><a class="list__item-link" href=""><i class="fab fa-twitter"></i></a></li>
-            <li class="list__item"><a class="list__item-link" href=""><i class="fab fa-github-alt"></i></a></li>
-            <li class="list__item"><a class="list__item-link" href=""><i class="fab fa-youtube"></i></a></li>
-        </ul>
+       <div class="card_contact vk">
+           <img src="assets/icons/vk.svg" height="75" width="75" alt="">
+           <a href="https://vk.com">vk.com</a>
+       </div>
+       <div class="card_contact phone">
+           <img src="assets/icons/phone.svg" height="75" width="75" alt="">
+           <a href="tel:79885329015">79885329015</a>
+       </div>
+       <div class="card_contact mail">
+           <img src="assets/icons/email.svg" height="75" width="75" alt="">
+           <a href="https://gmail.com">gmail.com</a>
+       </div>
     </main>
+</body>
