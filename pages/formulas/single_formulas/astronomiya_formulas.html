@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!-- ПОдключение кодировки -->
+<meta charset="utf-8">
+<!-- Подключение файла стилей CSS -->
+<link href="../../../styles.css" rel="stylesheet">
+<!-- Строка, которая будет отображаться в заголовке HTML страницы -->
+<title>Даты и события</title>
+
+<header>
+    <div class=caption>
+        <span> Астрономия формулы </span>
+    </div>
+    <div class="buttonback">
+        <a href="../general_formulas.html">
+            <img height="50" width="50" src="../../../assets/icons/back.svg" alt="">
+        </a>
+    </div>
+    <div class="buttonhome">
+        <a href="../../../index.html">
+            <img height="50" width="50" src="../../../assets/icons/home.svg" alt="">
+        </a>
+    </div>
+
+</header>
+
+<body>
+
+<main>
+    <table id="table" border="1" class="table">
+    </table>
+</main>
+
+</body>
+
+<script>
+
+    function getTh(value) {
+        const th = document.createElement('th');
+
+        if (typeof value === 'object') {
+            th.appendChild(
+                value
+            )
+        }
+
+        if (typeof value === "string") {
+            th.innerHTML = value;
+        }
+
+        return th;
+    }
+
+    function getImage(src) {
+        const img = document.createElement('img');
+        img.setAttribute('src', src);
+        return img;
+    }
+
+    function createRow(header, value) {
+        const tr = document.createElement('tr');
+        tr.appendChild(
+            getTh(header)
+        )
+        tr.appendChild(
+            getTh(
+                getImage(value)
+            )
+        )
+        return tr;
+    }
+
+    const table = document.getElementById('table');
+
+    const imagePath = "../../../assets/images/formulas/astronomy";
+
+    [{
+        header: "Путь при равномерном движении",
+        value: imagePath + "/Параллакс.jpg"
+    }, {
+        header: "Путь при равномерном движении",
+        value: "../../../assets/images/formulas/astronomy/Параллакс.jpg"
+    }, {
+        header: "Путь при равномерном движении",
+        value: "../../../assets/images/formulas/astronomy/Параллакс.jpg"
+    }, {
+        header: "Путь при равномерном движении",
+        value: "../../../assets/images/formulas/astronomy/Параллакс.jpg"
+    }, {
+        header: "Путь при равномерном движении",
+        value: "../../../assets/images/formulas/astronomy/Параллакс.jpg"
+    }].forEach(r => {
+        table.appendChild(
+            createRow(r.header, r.value)
+        )
+    });
+
+</script>
+
