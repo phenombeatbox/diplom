@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<!-- ПОдключение кодировки -->
+<meta charset="utf-8">
+<!-- Подключение файла стилей CSS -->
+<link href="../../styles.css" rel="stylesheet">
+<!-- Строка, которая будет отображаться в заголовке HTML страницы -->
+<title>Формулы и законы</title>
+
+<header>
+    <div class=caption>
+        <span> Формулы и законы </span>
+    </div>
+    <!-- <div class="buttonback">
+        <span> назад </span>
+    </div> -->
+    <div class="buttonhome">
+        <a href="../../index.html">
+            <img height="50" width="50" src="../../assets/icons/home.svg" alt="">
+        </a>
+    </div>
+
+</header>
+
+<body>
+    <main>
+        <div id="alldate" class="alldate">
+        </div>
+    </main>
+</body>
+
+<script>
+    const root = document.getElementById('alldate');
+
+    [{
+        text: 'Механика',
+        link: '../formulas/single_formulas/mehanic_formulas.html'
+    }, {
+        text: 'Молекулярная физика.Тепловые явления',
+        link: '../formulas/single_formulas/molecular_formulas.html'
+    }, {
+        text: 'Основы электродинамики',
+        link: '../formulas/single_formulas/electrodinam_formulas.html'
+    }, {
+        text: 'Колебания и волны',
+        link: '../formulas/single_formulas/kolebaniya_formulas.html'
+    }, {
+        text: 'Оптика',
+        link: '../formulas/single_formulas/optica_formulas.html'
+    }, {
+        text: 'Квантовая физика',
+        link: '../formulas/single_formulas/kvant_formulas.html'
+    }, {
+        text: 'Астрономия',
+        link: '../formulas/single_formulas/astronomiya_formulas.html'
+    }].forEach(item => {
+        const title = document.createElement('p');
+        title.innerHTML = item.text;
+        const a = document.createElement('a');
+        a.href = item.link;
+        const div = document.createElement('div');
+        div.setAttribute('class', 'box_date');
+
+        a.appendChild(title);
+        div.appendChild(a);
+        root.appendChild(div);
+    })
+</script>
