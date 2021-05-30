@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<!-- ПОдключение кодировки -->
+<meta charset="utf-8">
+<!-- Подключение файла стилей CSS -->
+<link href="../../../styles.css" rel="stylesheet">
+<!-- Строка, которая будет отображаться в заголовке HTML страницы -->
+<title>Молекулярная физика.Тепловые явления</title>
+
+<header>
+    <div class=caption>
+        <span> Молекулярная физика.Тепловые явления</span>
+    </div>
+    <div class="buttonback">
+        <a href="../general_formulas.html">
+            <img height="50" width="50" src="../../../assets/icons/back.svg" alt="">
+        </a>
+    </div>
+    <div class="buttonhome">
+        <a href="../../../index.html">
+            <img height="50" width="50" src="../../../assets/icons/home.svg" alt="">
+        </a>
+    </div>
+
+</header>
+
+<body>
+
+    <main>
+        <table id="table" border="1" class="table">
+        </table>
+    </main>
+
+</body>
+
+<script>
+    function getTh(value) {
+        const th = document.createElement('th');
+
+        if (typeof value === 'object') {
+            th.appendChild(
+                value
+            )
+        }
+
+        if (typeof value === "string") {
+            th.innerHTML = value;
+        }
+
+        return th;
+    }
+
+    function getImage(src) {
+        if (!src) {
+            return '';
+        }
+        const img = document.createElement('img');
+        img.setAttribute('src', src);
+        return img;
+    }
+
+    function createRow(header, value) {
+        const tr = document.createElement('tr');
+        tr.appendChild(
+            getTh(header)
+        )
+        tr.appendChild(
+            getTh(
+                getImage(value)
+            )
+        )
+        return tr;
+    }
+
+    const table = document.getElementById('table');
+
+    const imagePath = "../../../assets/images/formulas/molecular";
+
+    [{
+        header: "Вероятность макроскопического состояния",
+        value: imagePath + "/Вероятность макроскопического состояния.jpg"
+    }, {
+        header: "Внутренняя энергия идеального одноатомного газа",
+        value: imagePath + "/Внутренняя энергия идеального одноатомного газа.jpg"
+    }, {
+        header: "Второй закон термодинамики:Невозможно перевести тепло от более холодной системы к более горячей при отсутствии других одновременных изменений в обеих системах или в окружающих телах.",
+        value: null
+    }, {
+        header: "Закон Авогадро:В равных объемах газов при одинаковых температурах и давлениях содержится одинаковое число молекул.",
+        value: imagePath + "/Закон Авогадро.jpg"
+    }, {
+        header: "Закон Бойля–Мариотта:Для газа данной массы при постоянной температуре произведение давления газа на его объём постоянно.",
+        value: imagePath + "/Закон Бойля–Мариотта.jpg"
+    }, {
+        header: "Закон Гей-Люссака:Для газа данной массы при постоянном давлении отношение объёма к температуре постоянно.",
+        value: imagePath + "/Закон Гей-Люссака.jpg"
+    }, {
+        header: "Закон Шарля:Для газа данной массы отношение давления к абсолютной температуре постоянно, если объём не меняется.",
+        value: imagePath + "/Закон Шарля.jpg"
+    }, {
+        header: "Количество вещества",
+        value: imagePath + "/Количество вещества.jpg"
+    }, {
+        header: "Количество теплоты при нагревании ",
+        value: imagePath + "/Количество теплоты при нагревании .jpg"
+    }, {
+        header: "Количество теплоты при парообразовании.",
+        value: imagePath + "/Количество теплоты при парообразовании.jpg"
+    }, {
+        header: "Количество теплоты при плавлении.",
+        value: imagePath + "/Количество теплоты при плавлении.jpg"
+    }, {
+        header: "Коэффициент полезного действия (КПД) теплового двигателя.",
+        value: imagePath + "/Коэффициент полезного действия (КПД) теплового двигателя.jpg"
+    }, {
+        header: "Максимальное значение КПД тепловых двигателей",
+        value: imagePath + "/Максимальное значение КПД тепловых двигателей.jpg"
+    }, {
+        header: "Молярная масса",
+        value: imagePath + "/Молярная масса.jpg"
+    }, {
+        header: "Основное уравнение молекулярно-кинетической теории газов",
+        value: imagePath + "/Основное уравнение молекулярно-кинетической теории газов.jpg"
+    }, {
+        header: "Относительная влажность воздуха",
+        value: imagePath + "/Относительная влажность воздух.jpg"
+    }, {
+        header: "Первый закон термодинамики:Изменение внутренней энергии системы при переходе её из одного состояния в другое равно сумме работы внешних сил и количества теплоты, переданной системе.",
+        value: imagePath + "/Первый закон термодинамики.jpg"
+    }, {
+        header: "Работа в термодинамике ",
+        value: imagePath + "/Работа в термодинамике .jpg"
+    }, {
+        header: "Средняя квадратичная скорость молекул",
+        value: imagePath + "/Средняя квадратичная скорость молекул.jpg"
+    }, {
+        header: "Средняя кинетическая энергия хаотического поступательного движения молекул",
+        value: imagePath + "/Закон Джоуля–Ленца.jpg"
+    }, {
+        header: "Уравнение состояния идеального газа (уравнение Менделеева – Клайперона)",
+        value: imagePath + "/Уравнение состояния идеального газа (уравнение Менделеева – Клайперона).jpg"
+    }, {
+        header: "Уравнение теплового баланса .",
+        value: imagePath + "/Уравнение теплового баланса .jpg"
+    }].forEach(r => {
+        table.appendChild(
+            createRow(r.header, r.value)
+        )
+    });
+</script>

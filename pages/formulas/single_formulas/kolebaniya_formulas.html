@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!-- ПОдключение кодировки -->
+<meta charset="utf-8">
+<!-- Подключение файла стилей CSS -->
+<link href="../../../styles.css" rel="stylesheet">
+<!-- Строка, которая будет отображаться в заголовке HTML страницы -->
+<title>Колебания и волны</title>
+
+<header>
+    <div class=caption>
+        <span> Колебания и волны</span>
+    </div>
+    <div class="buttonback">
+        <a href="../general_formulas.html">
+            <img height="50" width="50" src="../../../assets/icons/back.svg" alt="">
+        </a>
+    </div>
+    <div class="buttonhome">
+        <a href="../../../index.html">
+            <img height="50" width="50" src="../../../assets/icons/home.svg" alt="">
+        </a>
+    </div>
+
+</header>
+
+<body>
+
+    <main>
+        <table id="table" border="1" class="table">
+        </table>
+    </main>
+
+</body>
+
+<script>
+    function getTh(value) {
+        const th = document.createElement('th');
+
+        if (typeof value === 'object') {
+            th.appendChild(
+                value
+            )
+        }
+
+        if (typeof value === "string") {
+            th.innerHTML = value;
+        }
+
+        return th;
+    }
+
+    function getImage(src) {
+        if (!src) {
+            return '';
+        }
+        const img = document.createElement('img');
+        img.setAttribute('src', src);
+        return img;
+    }
+
+    function createRow(header, value) {
+        const tr = document.createElement('tr');
+        tr.appendChild(
+            getTh(header)
+        )
+        tr.appendChild(
+            getTh(
+                getImage(value)
+            )
+        )
+        return tr;
+    }
+
+    const table = document.getElementById('table');
+
+    const imagePath = "../../../assets/images/formulas/kolebaniya";
+
+    [{
+        header: "Длина волны",
+        value: imagePath + "/Длина волны.jpg"
+    }, {
+        header: "Ёмкостное сопротивление",
+        value: imagePath + "/Ёмкостное сопротивление .jpg"
+    }, {
+        header: "Зависимость плотности потока излучения от расстояния до точечного источника",
+        value: imagePath + "/Зависимость плотности потока излучения от расстояния до точечного источника.jpg"
+    }, {
+        header: "Зависимость плотности потока излучения от частоты",
+        value: imagePath + "/Зависимость плотности потока излучения от частоты.jpg"
+    }, {
+        header: "Индуктивное сопротивление ",
+        value: imagePath + "/Индуктивное сопротивление .jpg"
+    }, {
+        header: "Круговая (циклическая) частота",
+        value: imagePath + "/Круговая (циклическая) частота.jpg"
+    }, {
+        header: "Плотность потока электромагнитного излучения",
+        value: imagePath + "/Плотность потока электромагнитного излучения.jpg"
+    }, {
+        header: "Принцип Гюйгенса-Френеля:Каждая точка волнового фронта является источником вторичных волн.",
+        value: null
+    }, {
+        header: "Плотность потока электромагнитного излучения",
+        value: imagePath + "/Плотность потока электромагнитного излучения.jpg"
+    }, {
+        header: "Собственная циклическая частота колебаний математического маятника",
+        value: imagePath + "/Собственная циклическая частота колебаний математического маятника.jpg"
+    }, {
+        header: "Собственная циклическая частота колебаний",
+        value: imagePath + "/Собственная циклическая частота колебаний.jpg"
+    }, {
+        header: "Уравнение гармонической бегущей волны",
+        value: imagePath + "/Уравнение гармонической бегущей волны.jpg"
+    }, {
+        header: "Уравнение движения математического маятника",
+        value: imagePath + "/Уравнение движения математического маятника.jpg"
+    }, {
+        header: "Уравнение движения тела, колеблющегося под действием силы упругости",
+        value: imagePath + "/Уравнение движения тела, колеблющегося под действием силы упругости.jpg"
+    }, {
+        header: "Уравнение, описывающее свободные колебания ",
+        value: imagePath + "/Уравнение, описывающее свободные колебания.jpg"
+    }, {
+        header: "Уравнение, описывающее свободные электрические колебания в контуре",
+        value: imagePath + "/Уравнение, описывающее свободные электрические колебания в контуре.jpg"
+    }, {
+        header: "Фаза колебаний ",
+        value: imagePath + "/Фаза колебаний .jpg"
+    }, {
+        header: "Формула Томсона",
+        value: imagePath + "/Формула Томсона.jpg"
+    }, {
+        header: "Частота",
+        value: imagePath + "/Частота.jpg"
+    }, {
+        header: "Энергия колеблющегося тела при отсутствии сил трения",
+        value: imagePath + "/Энергия колеблющегося тела при отсутствии сил трения.jpg"
+
+
+    }].forEach(r => {
+        table.appendChild(
+            createRow(r.header, r.value)
+        )
+    });
+</script>

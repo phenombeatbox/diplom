@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!-- ПОдключение кодировки -->
+<meta charset="utf-8">
+<!-- Подключение файла стилей CSS -->
+<link href="../../../styles.css" rel="stylesheet">
+<!-- Строка, которая будет отображаться в заголовке HTML страницы -->
+<title>Квантовая физика</title>
+
+<header>
+    <div class=caption>
+        <span> Квантовая физика</span>
+    </div>
+    <div class="buttonback">
+        <a href="../general_formulas.html">
+            <img height="50" width="50" src="../../../assets/icons/back.svg" alt="">
+        </a>
+    </div>
+    <div class="buttonhome">
+        <a href="../../../index.html">
+            <img height="50" width="50" src="../../../assets/icons/home.svg" alt="">
+        </a>
+    </div>
+
+</header>
+
+<body>
+
+    <main>
+        <table id="table" border="1" class="table">
+        </table>
+    </main>
+
+</body>
+
+<script>
+    function getTh(value) {
+        const th = document.createElement('th');
+
+        if (typeof value === 'object') {
+            th.appendChild(
+                value
+            )
+        }
+
+        if (typeof value === "string") {
+            th.innerHTML = value;
+        }
+
+        return th;
+    }
+
+    function getImage(src) {
+        if (!src) {
+            return '';
+        }
+        const img = document.createElement('img');
+        img.setAttribute('src', src);
+        return img;
+    }
+
+    function createRow(header, value) {
+        const tr = document.createElement('tr');
+        tr.appendChild(
+            getTh(header)
+        )
+        tr.appendChild(
+            getTh(
+                getImage(value)
+            )
+        )
+        return tr;
+    }
+
+    const table = document.getElementById('table');
+
+    const imagePath = "../../../assets/images/formulas/kvant";
+
+    [{
+        header: "Второй закон фотоэффекта:Максимальная кинетическая энергия фотоэлектронов линейно растет с частотой света и не зависит от его интенсивности.",
+        value: null
+    }, {
+        header: "Второй постулата Бора:Излучение света происходит при переходе атома из стационарного состояния с большей энергией Ek в стационарное состояние с меньшей энергией Еn. Энергия излученного фотона равна разности энергий стационарных состояний.",
+        value: imagePath + "/Второй постулата Бора.jpg"
+    }, {
+        header: "Доза излучения",
+        value: imagePath + "/Доза излучения.jpg"
+    }, {
+        header: "Закон радиоактивного распада",
+        value: imagePath + "/Закон радиоактивного распада.jpg"
+    }, {
+        header: "Красная граница фотоэффекта",
+        value: imagePath + "/Красная граница фотоэффекта.jpg"
+    }, {
+        header: "Первый закон фотоэффекта:Фототок насыщения прямо пропорционален падающему световому потоку.",
+        value: null
+    }, {
+        header: "Первый постулат Бора:Существуют особые, стационарные состояния атома, находясь в которых атом не излучает энергию, при этом электроны в атоме движутся с укореняем. Каждому стационарному состоянию соответствует определенная энергия.",
+        value: null
+    }, {
+        header: "Правило смещения:При α-распаде ядро теряет положительный заряд 2е и его масса М убывает примерно на четыре атомные единицы массы. В результате элемент смещается на две клетки к началу периодической системы.",
+        value: imagePath + "/Правило смещения.jpg"
+    }, {
+        header: "Третий закон фотоэффекта:Для каждого вещества существует максимальная длина волны, при которой фотоэффект еще наблюдается. При больших длинах волн фотоэффекта нет.",
+        value: null
+    }, {
+        header: "Формула де Бройля",
+        value: imagePath + "/Формула де Бройля.jpg"
+    }, {
+        header: "Эквивалентная доза поглощённого излучения",
+        value: imagePath + "/Эквивалентная доза поглощённого излучения.jpg"
+    }, {
+        header: "Энергия кванта",
+        value: imagePath + "/Энергия кванта.jpg"
+    }, {
+        header: "Энергия с учетом работы выхода",
+        value: imagePath + "/Энергия с учетом работы выхода.jpg"
+    }, {
+        header: "Энергия фотона",
+        value: imagePath + "/Энергия фотона.jpg"
+
+    }].forEach(r => {
+        table.appendChild(
+            createRow(r.header, r.value)
+        )
+    });
+</script>

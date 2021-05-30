@@ -8,7 +8,7 @@
 
 <header>
     <div class=caption>
-        <span> Астрономия формулы </span>
+        <span> Астрономия</span>
     </div>
     <div class="buttonback">
         <a href="../general_formulas.html">
@@ -25,15 +25,14 @@
 
 <body>
 
-<main>
-    <table id="table" border="1" class="table">
-    </table>
-</main>
+    <main>
+        <table id="table" border="1" class="table">
+        </table>
+    </main>
 
 </body>
 
 <script>
-
     function getTh(value) {
         const th = document.createElement('th');
 
@@ -51,6 +50,9 @@
     }
 
     function getImage(src) {
+        if (!src) {
+            return '';
+        }
         const img = document.createElement('img');
         img.setAttribute('src', src);
         return img;
@@ -74,25 +76,29 @@
     const imagePath = "../../../assets/images/formulas/astronomy";
 
     [{
-        header: "Путь при равномерном движении",
+        header: "Второй закон Кеплера:Каждая планета движется так, что радиус-вектор планеты за равные промежутки времени описывает равные площади.",
+        value: null
+    }, {
+        header: "Закон Стефана - Больцмана:Мощность излучения i с квадратного метра поверхности абсолютно черного тела пропорциональна четвертой степени его абсолютной температуры Т.",
+        value: imagePath + "/Закон Стефана - Больцмана.jpg"
+    }, {
+        header: "Закон Хаббла:Скорости удаления галактик возрастают прямо пропорционально расстоянию до них.",
+        value: imagePath + "/Закон Хаббла.jpg"
+    }, {
+        header: "Парралакс",
         value: imagePath + "/Параллакс.jpg"
     }, {
-        header: "Путь при равномерном движении",
-        value: "../../../assets/images/formulas/astronomy/Параллакс.jpg"
+        header: "Первый закон Кеплера:Под действием силы притяжения одно небесное тело движется в поле тяготения другого небесного тела по одному из конических сечений — кругу, эллипсу, параболе или гиперболе.",
+        value: null
     }, {
-        header: "Путь при равномерном движении",
-        value: "../../../assets/images/formulas/astronomy/Параллакс.jpg"
+        header: "Третий закон Кеплера:Куб большой полуоси орбиты тела, деленный на квадрат периода его обращения и на сумму масс тел, есть величина постоянная.",
+        value: imagePath + "/Третий закон Кеплера.jpg"
     }, {
-        header: "Путь при равномерном движении",
-        value: "../../../assets/images/formulas/astronomy/Параллакс.jpg"
-    }, {
-        header: "Путь при равномерном движении",
-        value: "../../../assets/images/formulas/astronomy/Параллакс.jpg"
+        header: "Формула Доплера",
+        value: imagePath + "/Формула Доплера.jpg"
     }].forEach(r => {
         table.appendChild(
             createRow(r.header, r.value)
         )
     });
-
 </script>
-

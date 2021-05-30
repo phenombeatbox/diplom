@@ -4,155 +4,11 @@
 <!-- Подключение файла стилей CSS -->
 <link href="../../../styles.css" rel="stylesheet">
 <!-- Строка, которая будет отображаться в заголовке HTML страницы -->
-<title>Даты и события</title>
-
-<style>
-    @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100);
-    body {
-        background-color: #3e94ec;
-        font-family: "Roboto", helvetica, arial, sans-serif;
-        font-size: 16px;
-        font-weight: 400;
-        text-rendering: optimizeLegibility;
-    }
-    
-    div.table-title {
-        display: block;
-        margin: auto;
-        max-width: 600px;
-        padding: 5px;
-        width: 100%;
-    }
-    
-    .table-title h3 {
-        color: #fafafa;
-        font-size: 30px;
-        font-weight: 400;
-        font-style: normal;
-        font-family: "Roboto", helvetica, arial, sans-serif;
-        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-        text-transform: uppercase;
-    }
-    /*** Table Styles **/
-    
-    .table-fill {
-        background: white;
-        border-radius: 3px;
-        border-collapse: collapse;
-        height: 320px;
-        margin: auto;
-        max-width: 600px;
-        padding: 5px;
-        width: 100%;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-        animation: float 5s infinite;
-    }
-    
-    th {
-        color: #D5DDE5;
-        ;
-        background: #1b1e24;
-        border-bottom: 4px solid #9ea7af;
-        border-right: 1px solid #343a45;
-        font-size: 23px;
-        font-weight: 100;
-        padding: 24px;
-        text-align: left;
-        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-        vertical-align: middle;
-    }
-    
-    th:first-child {
-        border-top-left-radius: 3px;
-    }
-    
-    th:last-child {
-        border-top-right-radius: 3px;
-        border-right: none;
-    }
-    
-    tr {
-        border-top: 1px solid #C1C3D1;
-        border-bottom-: 1px solid #C1C3D1;
-        color: #666B85;
-        font-size: 16px;
-        font-weight: normal;
-        text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
-    }
-    
-    tr:hover td {
-        background: #4E5066;
-        color: #FFFFFF;
-        border-top: 1px solid #22262e;
-    }
-    
-    tr:first-child {
-        border-top: none;
-    }
-    
-    tr:last-child {
-        border-bottom: none;
-    }
-    
-    tr:nth-child(odd) td {
-        background: #EBEBEB;
-    }
-    
-    tr:nth-child(odd):hover td {
-        background: #4E5066;
-    }
-    
-    tr:last-child td:first-child {
-        border-bottom-left-radius: 3px;
-    }
-    
-    tr:last-child td:last-child {
-        border-bottom-right-radius: 3px;
-    }
-    
-    td {
-        background: #FFFFFF;
-        padding: 20px;
-        text-align: left;
-        vertical-align: middle;
-        font-weight: 300;
-        font-size: 18px;
-        text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
-        border-right: 1px solid #C1C3D1;
-    }
-    
-    td:last-child {
-        border-right: 0px;
-    }
-    
-    th.text-left {
-        text-align: left;
-    }
-    
-    th.text-center {
-        text-align: center;
-    }
-    
-    th.text-right {
-        text-align: right;
-    }
-    
-    td.text-left {
-        text-align: left;
-    }
-    
-    td.text-center {
-        text-align: center;
-    }
-    
-    td.text-right {
-        text-align: right;
-    }
-</style>
+<title>Механика</title>
 
 <header>
     <div class=caption>
-        <span> Механика </span>
+        <span> Механика</span>
     </div>
     <div class="buttonback">
         <a href="../general_formulas.html">
@@ -168,45 +24,205 @@
 </header>
 
 <body>
+
     <main>
-        <div class="table-title">
-            <h3>Data Table</h3>
-        </div>
-        <table class="table-fill">
-            <thead>
-                <tr>
-                    <th class="text-left">Определение</th>
-                    <th class="text-left">Формула</th>
-                </tr>
-            </thead>
-            <tbody class="table-hover">
-                <tr>
-                    <td class="text-left">Вес тела</td>
-                    <td class="text-left">$ 50,000.00</td>
-                </tr>
-                <tr>
-                    <td class="text-left">February</td>
-                    <td class="text-left">$ 10,000.00</td>
-                </tr>
-                <tr>
-                    <td class="text-left">March</td>
-                    <td class="text-left">$ 85,000.00</td>
-                </tr>
-                <tr>
-                    <td class="text-left">April</td>
-                    <td class="text-left">$ 56,000.00</td>
-                </tr>
-                <tr>
-                    <td class="text-left">May</td>
-                    <td class="text-left">$ 98,000.00</td>
-                </tr>
-            </tbody>
+        <table id="table" border="1" class="table">
         </table>
-
-
     </main>
+
 </body>
 
-
 <script>
+    function getTh(value) {
+        const th = document.createElement('th');
+
+        if (typeof value === 'object') {
+            th.appendChild(
+                value
+            )
+        }
+
+        if (typeof value === "string") {
+            th.innerHTML = value;
+        }
+
+        return th;
+    }
+
+    function getImage(src) {
+        if (!src) {
+            return '';
+        }
+        const img = document.createElement('img');
+        img.setAttribute('src', src);
+        return img;
+    }
+
+    function createRow(header, value) {
+        const tr = document.createElement('tr');
+        tr.appendChild(
+            getTh(header)
+        )
+        tr.appendChild(
+            getTh(
+                getImage(value)
+            )
+        )
+        return tr;
+    }
+
+    const table = document.getElementById('table');
+
+    const imagePath = "../../../assets/images/formulas/mehanica";
+
+    [{
+        header: "Вес тела ",
+        value: imagePath + "/Вес тела .jpg"
+    }, {
+        header: "Второе условие равновесия твёрдого тела",
+        value: imagePath + "/Второе условие равновесия твёрдого тела.jpg"
+    }, {
+        header: "Второй закон Ньютона:Ускорение тела прямо пропорционально силе, действующей на него, и обратно пропорционально его массе.",
+        value: imagePath + "/Второй закон Ньютона.jpg"
+    }, {
+        header: "Движение с постоянным ускорением",
+        value: imagePath + "/Движение с постоянным ускорением.jpg"
+    }, {
+        header: "Закон всемирного тяготения:Сила взаимного притяжения двух тел прямо пропорциональна произведению масс этих тел и обратно пропорциональна квадрату расстояния между ними.",
+        value: imagePath + "/Закон всемирного тяготения.jpg"
+    }, {
+        header: "Закон Гука:При упругой деформации растяжения или сжатия модуль силы упругости прямо пропорционален модулю изменения длины тела.",
+        value: imagePath + "/Закон Гука.jpg"
+    }, {
+        header: "Закон Кулона (зависимость максимального значения модуля силы трения покоя от модуля силы нормальной реакции опоры):Максимальное значение модуля силы трения покоя пропорционально модулю силы нормальной реакции опоры.",
+        value: imagePath + "/Закон Кулона (зависимость максимального значения модуля силы трения покоя от модуля силы нормальной реакции опоры).jpg"
+    }, {
+        header: "Закон сложения скоростей:Если тело движется относительно некоторой системы отсчета К1 со скоростью  v ⃗_1 и сама система отсчета К1 движется относительно другой системы отсчета К2 со скоростью v ⃗ , то скорость тела относительно второй системы отсчета равна геометрической сумме скоростей  v ⃗_1 и v ⃗. ",
+        value: imagePath + "/Закон сложения скоростей.jpg"
+    }, {
+        header: "Закон сохранения импульса:Если сумма внешних сил равна нулю, то импульс системы сохраняется.",
+        value: imagePath + "/Закон сохранения импульса.jpg"
+    }, {
+        header: "Закон сохранения механической энергии:В изолированной системе, в которой действуют консервативные силы, механическая энергия сохраняется.",
+        value: imagePath + "/Закон сохранения механической энергии.jpg"
+    }, {
+        header: "Закон сохранения энергии:Энергия в природе не возникает из ничего и не исчезает: количество энергии неизменно, она только переходит из одной формы в другую.",
+        value: imagePath + "/Закон сохранения механической энергии.jpg"
+    }, {
+        header: "Импульс материальной точки",
+        value: imagePath + "/Импульс материальной точки.jpg"
+    }, {
+        header: "Импульс силы",
+        value: imagePath + "/Импульс силы.jpg"
+    }, {
+        header: "Кинетическая энергия",
+        value: imagePath + "/Кинетическая энергия.jpg"
+    }, {
+        header: "Коэффициент упругости ",
+        value: imagePath + "/Коэффициент упругости .jpg"
+    }, {
+        header: "Масса как мера инертности",
+        value: imagePath + "/Масса как мера инертности.jpg"
+    }, {
+        header: "Момент силы",
+        value: imagePath + "/Момент силы.jpg"
+    }, {
+        header: "Мощность",
+        value: imagePath + "/Мощность.jpg"
+    }, {
+        header: "Первая космическая скорость",
+        value: imagePath + "/Первая космическая скорость.jpg"
+    }, {
+        header: "Первое условие равновесия твёрдого тела:Если твёрдое тело находится в равновесии, то геометрическая сумма внешних сил, приложенных к нему, равна нулю.",
+        value: imagePath + "/Первое условие равновесия твёрдого тела.jpg"
+    }, {
+        header: "Первый закон Ньютона:Существуют системы отсчёта, называемые инерциальными, относительно которых тело движется прямолинейно и равномерно, если на него не действуют другие тела или действие этих тел не скомпенсировано.",
+        value: null
+    }, {
+        header: "Потенциальная энергия",
+        value: imagePath + "/Потенциальная энергия.jpg"
+    }, {
+        header: "Потенциальная энергия упруго деформированного тела ",
+        value: imagePath + "/Потенциальная энергия упруго деформированного тела .jpg"
+    }, {
+        header: "Принцип относительности (принцип относительности Галилея):Все механические процессы протекают одинаково во всех инерциальных системах отсчета.",
+        value: null
+    }, {
+        header: "Принцип суперпозиции полей:Если в данной точке пространства различные заряженные частицы создают электрические поля, напряженности которых E ⃗_1,E ⃗_2,E ⃗_3 и т. д., то результирующая напряженность поля в этой точке равна сумме напряжённостей этих полей.",
+        value: imagePath + "/Принцип суперпозиции полей.jpg"
+    }, {
+        header: "Принцип суперпозиции (наложения) сил:Если на тело одновременно действуют несколько сил, то ускорение тела будет пропорционально геометрической сумме всех этих сил.",
+        value: imagePath + "/Принцип суперпозиции (наложения) сил.jpg"
+    }, {
+        header: "Путь",
+        value: imagePath + "/Путь.jpg"
+    }, {
+        header: "Работа силы",
+        value: imagePath + "/Работа силы.jpg"
+    }, {
+        header: "Работа силы тяжести ",
+        value: imagePath + "/Работа силы тяжести .jpg"
+    }, {
+        header: "Работа силы упругости ",
+        value: imagePath + "/Работа силы упругости .jpg"
+    }, {
+        header: "Равенство сил в механики (сравнение сил):Две силы независимо от их природы считаются равными и противоположно направленными, если их одновременное действие на тело не меняет его скорости (т. е. не сообщает телу ускорение).",
+        value: null
+    }, {
+        header: "Связь между линейной и угловой скоростями",
+        value: imagePath + "/Связь между линейной и угловой скоростями.jpg"
+    }, {
+        header: "Сила трения",
+        value: imagePath + "/Сила трения.jpg"
+    }, {
+        header: "Сила тяжести",
+        value: imagePath + "/Сила тяжести.jpg"
+    }, {
+        header: "Сила упругости",
+        value: imagePath + "/Сила упругости.jpg"
+    }, {
+        header: "Скорость при движении с постоянным ускорением ",
+        value: imagePath + "/Скорость при движении с постоянным ускорением .jpg"
+    }, {
+        header: "Средняя путевая скорость",
+        value: imagePath + "/Средняя путевая скорость.jpg"
+    }, {
+        header: "Средняя скорость перемещения",
+        value: imagePath + "/Средняя скорость перемещения.jpg"
+    }, {
+        header: "Теорема об изменение кинетической энергии:Изменение кинетической энергии тела (материальной точки) за некоторый промежуток времени равно работе, совершенной за это время силой, действующей на тело.",
+        value: null
+    }, {
+        header: "Теорема об изменение кинетической энергии",
+        value: imagePath + "/Теорема об изменение кинетической энергии.jpg"
+    }, {
+        header: "Третий закон Ньютона:Силы, с которыми тела действуют друг на друга, равны по модулю и направлены по одной прямой в противоположные стороны.",
+        value: imagePath + "/Третий закон Ньютона.jpg"
+    }, {
+        header: "Угловая скорость тела при полном обороте",
+        value: imagePath + "/Угловая скорость тела при полном обороте.jpg"
+    }, {
+        header: "Угловая скорость тела при равномерном вращении",
+        value: imagePath + "/Угловая скорость тела при равномерном вращении.jpg"
+    }, {
+        header: "Уравнение равномерного прямолинейного движения точки",
+        value: imagePath + "/Уравнение равномерного прямолинейного движения точки.jpg"
+    }, {
+        header: "Ускорение",
+        value: imagePath + "/Ускорение.jpg"
+    }, {
+        header: "Ускорение при вращательном движении",
+        value: imagePath + "/Ускорение при вращательном движении.jpg"
+    }, {
+        header: "Центростремительное ускорение",
+        value: imagePath + "/Центростремительное ускорение.jpg"
+
+
+
+
+    }].forEach(r => {
+        table.appendChild(
+            createRow(r.header, r.value)
+        )
+    });
 </script>

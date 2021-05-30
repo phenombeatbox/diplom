@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!-- ПОдключение кодировки -->
+<meta charset="utf-8">
+<!-- Подключение файла стилей CSS -->
+<link href="../../../styles.css" rel="stylesheet">
+<!-- Строка, которая будет отображаться в заголовке HTML страницы -->
+<title>Оптика</title>
+
+<header>
+    <div class=caption>
+        <span> Оптика</span>
+    </div>
+    <div class="buttonback">
+        <a href="../general_formulas.html">
+            <img height="50" width="50" src="../../../assets/icons/back.svg" alt="">
+        </a>
+    </div>
+    <div class="buttonhome">
+        <a href="../../../index.html">
+            <img height="50" width="50" src="../../../assets/icons/home.svg" alt="">
+        </a>
+    </div>
+
+</header>
+
+<body>
+
+    <main>
+        <table id="table" border="1" class="table">
+        </table>
+    </main>
+
+</body>
+
+<script>
+    function getTh(value) {
+        const th = document.createElement('th');
+
+        if (typeof value === 'object') {
+            th.appendChild(
+                value
+            )
+        }
+
+        if (typeof value === "string") {
+            th.innerHTML = value;
+        }
+
+        return th;
+    }
+
+    function getImage(src) {
+        if (!src) {
+            return '';
+        }
+        const img = document.createElement('img');
+        img.setAttribute('src', src);
+        return img;
+    }
+
+    function createRow(header, value) {
+        const tr = document.createElement('tr');
+        tr.appendChild(
+            getTh(header)
+        )
+        tr.appendChild(
+            getTh(
+                getImage(value)
+            )
+        )
+        return tr;
+    }
+
+    const table = document.getElementById('table');
+
+    const imagePath = "../../../assets/images/formulas/optic";
+
+    [{
+        header: "Абсолютный показатель преломления среды",
+        value: imagePath + "/Абсолютный показатель преломления среды.jpg"
+    }, {
+        header: "Закон отражения света:Луч падающий, луч отраженный и нормаль к отражающей поверхности в точке падения лежат в одной плоскости, причем угол падения равен углу отражения.",
+        value: null
+    }, {
+        header: "Законы преломления света:1) Падающий луч, преломленный луч и нормаль к границе раздела двух сред в точке падения лежат в одной плоскости.2) Отношение синуса угла падения к синусу угла преломления есть величина постоянная для этих двух сред, равная относительному показателю преломления второй среды относительно первой.",
+        value: imagePath + "/Законы преломления света.jpg"
+    }, {
+        header: "Линейное увеличение",
+        value: imagePath + "/Линейное увеличение.jpg"
+    }, {
+        header: "Оптическая сила линзы",
+        value: imagePath + "/Оптическая сила линзы.jpg"
+    }, {
+        header: "Относительность промежутков времени (релятивистский эффект замедления времени в движущихся системах отсчета)",
+        value: imagePath + "/Относительность промежутков времени (релятивистский эффект замедления времени в движущихся системах отсчета).jpg"
+    }, {
+        header: "Относительность расстояний (релятивистское сокращение размеров движущегося тела)",
+        value: imagePath + "/Относительность расстояний (релятивистское сокращение размеров движущегося тела).jpg"
+    }, {
+        header: "Постулаты теории относительности:1.	Все процессы в природе протекают одинаково во всех инерциальных системах отсчета.2.	Скорость света в вакууме одинакова во всех инерциальных системах отсчета и не зависит ни от скорости источника, ни от скорости приемника светового сигнала.",
+        value: null
+    }, {
+        header: "Релятивистский закон сложения скоростей",
+        value: imagePath + "/Релятивистский закон сложения скоростей.jpg"
+    }, {
+        header: "Условие максимумов",
+        value: imagePath + "/Условие максимумов.jpg"
+    }, {
+        header: "Условие максимума для дифракционной решётки",
+        value: imagePath + "/Условие максимума для дифракционной решётки.jpg"
+    }, {
+        header: "Условие минимумов:Амплитуда колебаний частиц среды в данной точке минимальна, если разность хода двух волн, возбуждающих колебания в этой точке, равна нечетному числу полуволн.",
+        value: imagePath + "/Условие минимумов.jpg"
+    }, {
+        header: "Формула тонкой линзы",
+        value: imagePath + "/Формула тонкой линзы.jpg"
+    }, {
+        header: "Энергия покоя ",
+        value: imagePath + "/Энергия покоя .jpg"
+
+    }].forEach(r => {
+        table.appendChild(
+            createRow(r.header, r.value)
+        )
+    });
+</script>
